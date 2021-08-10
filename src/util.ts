@@ -7,8 +7,12 @@ const fetchData = async (animal: animal) => {
     animal === "cat"
       ? "https://api.thecatapi.com/v1/images/search"
       : "https://dog.ceo/api/breeds/image/random";
-  const data = await axios.get(endpoint);
-  return data;
+  try {
+    const data = await axios.get(endpoint);
+    return animal === "cat" ? data.data[0].url : data.data.message;
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 export default fetchData;
