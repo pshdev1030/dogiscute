@@ -65,9 +65,7 @@ function App() {
   return (
     <>
       <div>{`헉${curAnimal === "dog" ? "강아지" : "고양이"}가너무귀여워`}</div>
-      <div>{`${
-        curAnimal === "dog" ? "강아지" : "고양이"
-      }는완벽한동물이야`}</div>
+      <div>{`${curAnimal === "dog" ? "강아지" : "고양이"}`}</div>
       {!dogData.length && !catData.length && (
         <button onClick={loadData}>시작하기</button>
       )}
